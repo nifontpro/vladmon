@@ -1,0 +1,14 @@
+node_modules
+dist
+build
+coverage
+.vite
+
+# LLM Wiki — не часть React-проекта, см. CLAUDE.md → ЧАСТЬ II
+wiki
+raw
+
+# Lock-файлы
+package-lock.json
+pnpm-lock.yaml
+yarn.lock

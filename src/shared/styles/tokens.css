@@ -1,0 +1,130 @@
+/* ============================================================
+   ЦѢРКЪ — design tokens
+   Цвет, шрифт, размер, тень, движение.
+   ============================================================ */
+
+:root {
+  /* ---------- Бумага (paper / background) ---------- */
+  --cerk-paper-00: #fbf3da;
+  --cerk-paper-01: #f1e3b6;
+  --cerk-paper-02: #e8d59a;
+  --cerk-paper-03: #ddc681;
+  --cerk-paper-04: #cdb069;
+  --cerk-paper-fold: #b89752;
+
+  /* ---------- Чернила (ink / text) ---------- */
+  --cerk-ink-00: #2a1810;
+  --cerk-ink-01: #4a2e1e;
+  --cerk-ink-02: #6e4d35;
+  --cerk-ink-03: #9a7a5c;
+  --cerk-ink-04: #c2a784;
+
+  /* ---------- Киноварь (rubric red) ---------- */
+  --cerk-rubric-light: #c44a3a;
+  --cerk-rubric: #a82820;
+  --cerk-rubric-deep: #7a1810;
+  --cerk-rubric-ink: #5a0e08;
+
+  /* ---------- Лазурь / Индиго ---------- */
+  --cerk-lapis-10: #d9d7ec;
+  --cerk-lapis-20: #a8a3d2;
+  --cerk-lapis-40: #5a4f9e;
+  --cerk-lapis-60: #3a2c7a;
+  --cerk-lapis-70: #2a1e60;
+  --cerk-lapis-80: #1a124a;
+  --cerk-lapis-90: #0e0830;
+
+  /* ---------- Сусаль (gold) ---------- */
+  --cerk-gold-light: #e0bc62;
+  --cerk-gold: #b8893a;
+  --cerk-gold-deep: #8a6420;
+
+  /* ---------- Изумруд ---------- */
+  --cerk-emerald: #3a6242;
+  --cerk-emerald-deep: #244029;
+
+  /* ---------- Семантика ---------- */
+  --cerk-bg: var(--cerk-paper-01);
+  --cerk-bg-layer: var(--cerk-paper-02);
+  --cerk-bg-layer-hi: var(--cerk-paper-00);
+  --cerk-text: var(--cerk-ink-00);
+  --cerk-text-mute: var(--cerk-ink-01);
+  --cerk-text-helper: var(--cerk-ink-02);
+  --cerk-text-disabled: var(--cerk-ink-03);
+  --cerk-border: var(--cerk-paper-04);
+  --cerk-border-strong: var(--cerk-paper-fold);
+  --cerk-accent: var(--cerk-lapis-60);
+  --cerk-accent-hover: var(--cerk-lapis-70);
+  --cerk-rub: var(--cerk-rubric);
+  --cerk-focus: var(--cerk-lapis-60);
+
+  /* ---------- Состояния ---------- */
+  --cerk-success: var(--cerk-emerald);
+  --cerk-warning: var(--cerk-gold-deep);
+  --cerk-error: var(--cerk-rubric-deep);
+  --cerk-info: var(--cerk-lapis-60);
+
+  /* ---------- Spacing (4px base, 13 ступеней) ---------- */
+  --cerk-1: 2px;
+  --cerk-2: 4px;
+  --cerk-3: 8px;
+  --cerk-4: 12px;
+  --cerk-5: 16px;
+  --cerk-6: 24px;
+  --cerk-7: 32px;
+  --cerk-8: 40px;
+  --cerk-9: 48px;
+  --cerk-10: 64px;
+  --cerk-11: 80px;
+  --cerk-12: 96px;
+  --cerk-13: 128px;
+
+  /* ---------- Типографика ---------- */
+  --cerk-font-body: 'Literata', Georgia, 'Times New Roman', serif;
+  --cerk-font-ui: 'Onest', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --cerk-font-display: 'Monomakh', 'Fedorovsk', 'Ponomar', serif;
+  --cerk-font-rubric: 'Fedorovsk', 'Vertograd', 'Monomakh', serif;
+  --cerk-font-initial: 'Vertograd', 'Indiction', 'Fedorovsk', serif;
+  --cerk-font-chant: 'Ponomar', 'Cathisma', Georgia, serif;
+  --cerk-font-mono: 'JetBrains Mono', 'SF Mono', 'Menlo', monospace;
+
+  /* type scale */
+  --cerk-t-01: 12px;
+  --cerk-t-02: 14px;
+  --cerk-t-03: 16px;
+  --cerk-t-04: 18px;
+  --cerk-t-05: 20px;
+  --cerk-t-06: 24px;
+  --cerk-t-07: 28px;
+  --cerk-t-08: 32px;
+  --cerk-t-09: 40px;
+  --cerk-t-10: 48px;
+  --cerk-t-11: 64px;
+  --cerk-t-12: 84px;
+  --cerk-t-13: 112px;
+
+  /* ---------- Радиусы (минимальные) ---------- */
+  --cerk-r-0: 0;
+  --cerk-r-1: 1px;
+  --cerk-r-2: 2px;
+
+  /* ---------- Тени ---------- */
+  --cerk-press: inset 0 -1px 0 rgba(42, 24, 16, 0.18);
+  --cerk-elevation-1: 0 1px 0 rgba(42, 24, 16, 0.1);
+  --cerk-elevation-2:
+    0 6px 18px -8px rgba(42, 24, 16, 0.32), 0 2px 4px rgba(42, 24, 16, 0.12);
+  --cerk-elevation-3:
+    0 18px 40px -16px rgba(42, 24, 16, 0.42), 0 4px 10px rgba(42, 24, 16, 0.18);
+
+  /* ---------- Движение (Linear-like) ---------- */
+  --cerk-dur-1: 70ms;
+  --cerk-dur-2: 120ms;
+  --cerk-dur-3: 180ms;
+  --cerk-dur-4: 280ms;
+  --cerk-ease: cubic-bezier(0.2, 0, 0, 1);
+  --cerk-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --cerk-ease-in: cubic-bezier(0.4, 0, 1, 1);
+
+  /* ---------- Paper grain (SVG noise) ---------- */
+  --cerk-grain: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' seed='3'/><feColorMatrix values='0 0 0 0 0.35  0 0 0 0 0.22  0 0 0 0 0.12  0 0 0 0.08 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}

@@ -1,0 +1,104 @@
+[
+  {
+    "slug": "band-pomegranate",
+    "w": 337,
+    "h": 56,
+    "file": "band-pomegranate.png"
+  },
+  {
+    "slug": "band-leaves",
+    "w": 298,
+    "h": 72,
+    "file": "band-leaves.png"
+  },
+  {
+    "slug": "band-floral-dense",
+    "w": 328,
+    "h": 100,
+    "file": "band-floral-dense.png"
+  },
+  {
+    "slug": "corner-left",
+    "w": 149,
+    "h": 200,
+    "file": "corner-left.png"
+  },
+  {
+    "slug": "corner-right",
+    "w": 135,
+    "h": 200,
+    "file": "corner-right.png"
+  },
+  {
+    "slug": "panel-medallion",
+    "w": 348,
+    "h": 188,
+    "file": "panel-medallion.png"
+  },
+  {
+    "slug": "vignette-pear-left",
+    "w": 76,
+    "h": 223,
+    "file": "vignette-pear-left.png"
+  },
+  {
+    "slug": "vignette-box",
+    "w": 110,
+    "h": 155,
+    "file": "vignette-box.png"
+  },
+  {
+    "slug": "vignette-pear-right",
+    "w": 101,
+    "h": 227,
+    "file": "vignette-pear-right.png"
+  },
+  {
+    "slug": "vignette-horse",
+    "w": 111,
+    "h": 167,
+    "file": "vignette-horse.png"
+  },
+  {
+    "slug": "divider-silver",
+    "w": 153,
+    "h": 102,
+    "file": "divider-silver.png"
+  },
+  {
+    "slug": "initial-k",
+    "w": 232,
+    "h": 335,
+    "file": "initial-k.png"
+  },
+  {
+    "slug": "initial-zh",
+    "w": 187,
+    "h": 332,
+    "file": "initial-zh.png"
+  },
+  {
+    "slug": "initial-i",
+    "w": 95,
+    "h": 167,
+    "file": "initial-i.png"
+  },
+  {
+    "slug": "initial-g",
+    "w": 145,
+    "h": 216,
+    "file": "initial-g.png"
+  },
+  {
+    "slug": "initial-b",
+    "w": 199,
+    "h": 358,
+    "file": "initial-b.png"
+  },
+  {
+    "slug": "initial-p",
+    "w": 193,
+    "h": 350,
+    "file": "initial-p.png"
+  }
+]

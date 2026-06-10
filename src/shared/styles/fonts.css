@@ -1,0 +1,32 @@
+/* Church Slavonic display fonts — SIL OFL 1.1.
+   Используются ТОЛЬКО для заглавий и декоративных надписей.
+   Текст внутри них пишется современной русской азбукой. */
+
+@font-face {
+  font-family: 'Monomakh';
+  src: url('/fonts/Monomakh-Regular.otf') format('opentype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Fedorovsk';
+  src: url('/fonts/Fedorovsk-Regular.otf') format('opentype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Vertograd';
+  src: url('/fonts/Vertograd-Regular.otf') format('opentype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Ponomar';
+  src: url('/fonts/Ponomar-Regular.otf') format('opentype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Indiction';
+  src: url('/fonts/Indiction-Regular.otf') format('opentype');
+  font-display: swap;
+}
+
+/* Body / UI — Literata + Onest подключены в index.css через @import,
+   чтобы @import url(...) находился до @import "tailwindcss" (правило CSS). */

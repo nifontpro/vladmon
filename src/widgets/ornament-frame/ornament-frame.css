@@ -1,0 +1,133 @@
+/*
+ * OrnamentFrame — рамка из 4 полос + 4 угловых розеток.
+ *
+ * Толщина управляется CSS-переменной --orn-th. На широких экранах
+ * рамка декоративная (56px), на узких — складывается в тонкие полосы
+ * только сверху и снизу (боковины убираются, чтобы не съедать ширину
+ * контента), а угловые медальоны масштабируются.
+ */
+
+.ornament-frame {
+  --orn-th: 72px;
+  --orn-gap: 24px;
+  position: relative;
+  padding: var(--orn-th);
+  margin: var(--orn-gap);
+  /* фон под рамкой — тёплый пергамент, продолжение бумажной палитры */
+  background-color: #efe5ce;
+}
+
+.ornament-frame__band,
+.ornament-frame__column,
+.ornament-frame__corner {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  /* отключаем сглаживание на резких краях розеток — рукописный исходник */
+  image-rendering: auto;
+}
+
+.ornament-frame__band {
+  height: var(--orn-th);
+  /* `round` подгоняет ширину каждой копии так, чтобы помещалось целое число
+     копий по ширине полосы. Никаких обрезков справа.
+     `0 50%` (левый край) прижимает первую копию к началу полосы — иначе
+     `center center` смещает узор и слева видна обрезанная половина тайла. */
+  background-repeat: round no-repeat;
+  background-position: 0 50%;
+  background-size: auto 100%;
+  left: var(--orn-th);
+  right: var(--orn-th);
+}
+
+.ornament-frame__band--top {
+  top: 0;
+}
+
+.ornament-frame__band--bottom {
+  bottom: 0;
+  transform: scaleY(-1);
+}
+
+.ornament-frame__column {
+  width: var(--orn-th);
+  /* `round` по вертикали — целое число копий по высоте колонны.
+     `50% 0` (верхний край) прижимает первую копию к верху колонны. */
+  background-repeat: no-repeat round;
+  background-position: 50% 0;
+  background-size: 100% auto;
+  top: var(--orn-th);
+  bottom: var(--orn-th);
+}
+
+.ornament-frame__column--left {
+  left: 0;
+}
+
+.ornament-frame__column--right {
+  right: 0;
+  transform: scaleX(-1);
+}
+
+.ornament-frame__corner {
+  width: var(--orn-th);
+  height: var(--orn-th);
+  display: block;
+  object-fit: contain;
+  object-position: center;
+  /* Угол должен «лежать» на бумаге, не накладываться на синие колонны и каёмки —
+     поэтому он сидит поверх по z-index, но прозрачные углы PNG пропускают фон. */
+  z-index: 2;
+}
+
+.ornament-frame__corner--tl {
+  top: 0;
+  left: 0;
+}
+.ornament-frame__corner--tr {
+  top: 0;
+  right: 0;
+}
+.ornament-frame__corner--bl {
+  bottom: 0;
+  left: 0;
+}
+.ornament-frame__corner--br {
+  bottom: 0;
+  right: 0;
+}
+
+.ornament-frame__content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Узкие экраны: тонкая рамка и меньший внешний зазор, чтобы не съедать ширину */
+@media (max-width: 1100px) {
+  .ornament-frame {
+    --orn-th: 56px;
+    --orn-gap: 16px;
+  }
+}
+
+@media (max-width: 760px) {
+  .ornament-frame {
+    --orn-th: 40px;
+    --orn-gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ornament-frame {
+    --orn-th: 28px;
+    --orn-gap: 8px;
+  }
+}
+
+/* Особая интонация для уважительной редукции: уважаем prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .ornament-frame__band,
+  .ornament-frame__column {
+    transition: none;
+  }
+}

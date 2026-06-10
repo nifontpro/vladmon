@@ -1,0 +1,564 @@
+/* ============================================================
+   ЦѢРКЪ — компоненты
+   ============================================================ */
+
+/* ----------------- КНОПКИ ----------------- */
+
+.cerk-btn {
+  --btn-bg: var(--cerk-accent);
+  --btn-bg-hover: var(--cerk-accent-hover);
+  --btn-fg: var(--cerk-paper-00);
+  --btn-border: var(--cerk-accent);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--cerk-3);
+  height: 44px;
+  padding: 0 var(--cerk-6);
+  font-family: var(--cerk-font-ui);
+  font-size: var(--cerk-t-03);
+  font-weight: 500;
+  letter-spacing: 0.005em;
+  color: var(--btn-fg);
+  background: var(--btn-bg);
+  border: 1px solid var(--btn-border);
+  border-radius: var(--cerk-r-0);
+  cursor: pointer;
+  text-decoration: none;
+  user-select: none;
+  position: relative;
+  transition:
+    background var(--cerk-dur-2) var(--cerk-ease),
+    border-color var(--cerk-dur-2) var(--cerk-ease),
+    color var(--cerk-dur-2) var(--cerk-ease),
+    transform var(--cerk-dur-1) var(--cerk-ease);
+}
+.cerk-btn:hover {
+  background: var(--btn-bg-hover);
+  border-color: var(--btn-bg-hover);
+}
+.cerk-btn:active {
+  transform: translateY(1px);
+}
+.cerk-btn:focus-visible {
+  outline: 2px solid var(--cerk-focus);
+  outline-offset: 2px;
+}
+.cerk-btn:disabled,
+.cerk-btn[aria-disabled='true'] {
+  --btn-bg: var(--cerk-paper-03);
+  --btn-bg-hover: var(--cerk-paper-03);
+  --btn-fg: var(--cerk-text-disabled);
+  --btn-border: var(--cerk-paper-03);
+  cursor: not-allowed;
+  transform: none;
+}
+
+.cerk-btn--secondary {
+  --btn-bg: transparent;
+  --btn-bg-hover: rgba(58, 44, 122, 0.1);
+  --btn-fg: var(--cerk-accent);
+  --btn-border: var(--cerk-accent);
+}
+.cerk-btn--secondary:hover {
+  --btn-fg: var(--cerk-accent-hover);
+}
+
+.cerk-btn--ghost {
+  --btn-bg: transparent;
+  --btn-bg-hover: rgba(42, 24, 16, 0.06);
+  --btn-fg: var(--cerk-text);
+  --btn-border: transparent;
+}
+
+.cerk-btn--rubric {
+  --btn-bg: var(--cerk-rub);
+  --btn-bg-hover: var(--cerk-rubric-deep);
+  --btn-fg: var(--cerk-paper-00);
+  --btn-border: var(--cerk-rub);
+}
+
+.cerk-btn--gold {
+  --btn-bg: var(--cerk-gold);
+  --btn-bg-hover: var(--cerk-gold-deep);
+  --btn-fg: var(--cerk-paper-00);
+  --btn-border: var(--cerk-gold);
+}
+
+.cerk-btn--sm {
+  height: 32px;
+  padding: 0 var(--cerk-5);
+  font-size: var(--cerk-t-02);
+}
+.cerk-btn--lg {
+  height: 52px;
+  padding: 0 var(--cerk-7);
+  font-size: var(--cerk-t-04);
+}
+.cerk-btn--xl {
+  height: 64px;
+  padding: 0 var(--cerk-8);
+  font-size: var(--cerk-t-05);
+}
+
+.cerk-btn .icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* ----------------- ПОЛЯ ----------------- */
+
+.cerk-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cerk-2);
+}
+.cerk-field label {
+  font-size: var(--cerk-t-02);
+  color: var(--cerk-text-mute);
+  font-family: var(--cerk-font-ui);
+  font-weight: 500;
+}
+.cerk-field label .req {
+  color: var(--cerk-rub);
+  margin-left: 0.2em;
+}
+
+.cerk-input,
+.cerk-select,
+.cerk-textarea {
+  appearance: none;
+  width: 100%;
+  background: var(--cerk-paper-00);
+  border: 1px solid var(--cerk-border);
+  border-bottom-color: var(--cerk-border-strong);
+  border-radius: 0;
+  padding: 0 var(--cerk-4);
+  height: 44px;
+  font-family: var(--cerk-font-ui);
+  font-size: var(--cerk-t-03);
+  color: var(--cerk-text);
+  transition:
+    border-color var(--cerk-dur-2) var(--cerk-ease),
+    background var(--cerk-dur-2) var(--cerk-ease),
+    box-shadow var(--cerk-dur-2) var(--cerk-ease);
+}
+.cerk-textarea {
+  padding: var(--cerk-3) var(--cerk-4);
+  height: auto;
+  min-height: 96px;
+  line-height: 1.5;
+  resize: vertical;
+}
+.cerk-input:hover,
+.cerk-select:hover,
+.cerk-textarea:hover {
+  background: var(--cerk-paper-00);
+  border-color: var(--cerk-paper-fold);
+}
+.cerk-input:focus,
+.cerk-select:focus,
+.cerk-textarea:focus {
+  outline: none;
+  border-color: var(--cerk-accent);
+  box-shadow: inset 0 -1px 0 0 var(--cerk-accent);
+}
+.cerk-input::placeholder,
+.cerk-textarea::placeholder {
+  color: var(--cerk-text-disabled);
+}
+.cerk-input:disabled,
+.cerk-select:disabled,
+.cerk-textarea:disabled {
+  background: var(--cerk-paper-02);
+  color: var(--cerk-text-disabled);
+  cursor: not-allowed;
+}
+.cerk-input[aria-invalid='true'] {
+  border-color: var(--cerk-error);
+  box-shadow: inset 0 -1px 0 0 var(--cerk-error);
+}
+.cerk-field .helper {
+  font-size: var(--cerk-t-01);
+  color: var(--cerk-text-helper);
+}
+.cerk-field .error {
+  font-size: var(--cerk-t-01);
+  color: var(--cerk-error);
+}
+
+.cerk-select {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%232a1810' stroke-width='1.5'><path d='M3.5 6 8 10.5 12.5 6'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right var(--cerk-4) center;
+  background-size: 16px;
+  padding-right: calc(var(--cerk-4) + 24px);
+  cursor: pointer;
+}
+
+/* ----------------- CHECK / RADIO ----------------- */
+
+.cerk-check {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--cerk-3);
+  cursor: pointer;
+  user-select: none;
+  font-size: var(--cerk-t-03);
+  font-family: var(--cerk-font-ui);
+}
+.cerk-check input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.cerk-check .box {
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--cerk-border-strong);
+  background: var(--cerk-paper-00);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background var(--cerk-dur-2),
+    border-color var(--cerk-dur-2);
+  flex-shrink: 0;
+}
+.cerk-check .box svg {
+  opacity: 0;
+  color: var(--cerk-paper-00);
+  transition: opacity var(--cerk-dur-2);
+}
+.cerk-check input:checked + .box {
+  background: var(--cerk-accent);
+  border-color: var(--cerk-accent);
+}
+.cerk-check input:checked + .box svg {
+  opacity: 1;
+}
+.cerk-check input:focus-visible + .box {
+  outline: 2px solid var(--cerk-focus);
+  outline-offset: 2px;
+}
+.cerk-check.radio .box {
+  border-radius: 50%;
+}
+.cerk-check.radio input:checked + .box {
+  background: var(--cerk-paper-00);
+  border-color: var(--cerk-accent);
+}
+.cerk-check.radio input:checked + .box::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cerk-accent);
+}
+
+/* ----------------- BADGES ----------------- */
+
+.cerk-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--cerk-2);
+  font-size: var(--cerk-t-01);
+  font-family: var(--cerk-font-ui);
+  letter-spacing: 0.04em;
+  padding: 2px var(--cerk-3);
+  background: var(--cerk-paper-02);
+  color: var(--cerk-text-mute);
+  border: 1px solid transparent;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.cerk-badge--rubric {
+  background: rgba(168, 40, 32, 0.12);
+  color: var(--cerk-rubric-deep);
+}
+.cerk-badge--lapis {
+  background: rgba(58, 44, 122, 0.14);
+  color: var(--cerk-lapis-70);
+}
+.cerk-badge--gold {
+  background: rgba(184, 137, 58, 0.18);
+  color: var(--cerk-gold-deep);
+}
+.cerk-badge--emerald {
+  background: rgba(58, 98, 66, 0.14);
+  color: var(--cerk-emerald-deep);
+}
+.cerk-badge--outline {
+  background: transparent;
+  border-color: var(--cerk-border-strong);
+}
+.cerk-badge .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* ----------------- ТАБЫ ----------------- */
+
+.cerk-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--cerk-border-strong);
+}
+.cerk-tabs button {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: var(--cerk-4) var(--cerk-5);
+  font-family: var(--cerk-font-ui);
+  font-weight: 500;
+  font-size: var(--cerk-t-03);
+  color: var(--cerk-text-mute);
+  cursor: pointer;
+  position: relative;
+  margin-bottom: -1px;
+  border-bottom: 2px solid transparent;
+  transition:
+    color var(--cerk-dur-2),
+    border-color var(--cerk-dur-2);
+}
+.cerk-tabs button:hover {
+  color: var(--cerk-text);
+}
+.cerk-tabs button[aria-selected='true'] {
+  color: var(--cerk-rub);
+  border-bottom-color: var(--cerk-rub);
+  font-family: var(--cerk-font-rubric);
+}
+
+/* ----------------- ТАБЛИЦА ----------------- */
+
+.cerk-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--cerk-t-03);
+  font-family: var(--cerk-font-body);
+  font-feature-settings: 'lnum';
+}
+.cerk-table thead th {
+  text-align: left;
+  font-family: var(--cerk-font-rubric);
+  font-weight: 400;
+  color: var(--cerk-rub);
+  padding: var(--cerk-4) var(--cerk-5);
+  border-bottom: 1px solid var(--cerk-border-strong);
+  font-size: var(--cerk-t-03);
+}
+.cerk-table tbody td {
+  padding: var(--cerk-4) var(--cerk-5);
+  border-bottom: 1px solid var(--cerk-border);
+  vertical-align: top;
+}
+.cerk-table tbody tr {
+  transition: background var(--cerk-dur-2);
+}
+.cerk-table tbody tr:hover {
+  background: rgba(58, 44, 122, 0.06);
+}
+.cerk-table tbody td.num {
+  font-variant-numeric: tabular-nums;
+  font-family: var(--cerk-font-mono);
+  color: var(--cerk-text-mute);
+}
+
+/* ----------------- БАННЕР ----------------- */
+
+.cerk-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--cerk-4);
+  padding: var(--cerk-5) var(--cerk-6);
+  background: var(--cerk-paper-00);
+  border-left: 4px solid var(--cerk-rub);
+  font-size: var(--cerk-t-03);
+}
+.cerk-banner.lapis {
+  border-left-color: var(--cerk-accent);
+}
+.cerk-banner.gold {
+  border-left-color: var(--cerk-gold);
+}
+.cerk-banner.emerald {
+  border-left-color: var(--cerk-emerald);
+}
+.cerk-banner .icon {
+  color: var(--cerk-rub);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.cerk-banner.lapis .icon {
+  color: var(--cerk-accent);
+}
+.cerk-banner.gold .icon {
+  color: var(--cerk-gold-deep);
+}
+.cerk-banner.emerald .icon {
+  color: var(--cerk-emerald);
+}
+.cerk-banner strong {
+  font-family: var(--cerk-font-rubric);
+  color: var(--cerk-text);
+  font-weight: 400;
+}
+
+/* ----------------- AVATARS ----------------- */
+
+.cerk-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--cerk-lapis-60);
+  color: var(--cerk-paper-00);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--cerk-font-initial);
+  font-size: var(--cerk-t-05);
+  border: 1px solid var(--cerk-lapis-80);
+}
+.cerk-avatar.rubric {
+  background: var(--cerk-rub);
+  border-color: var(--cerk-rubric-deep);
+}
+.cerk-avatar.gold {
+  background: var(--cerk-gold);
+  border-color: var(--cerk-gold-deep);
+  color: var(--cerk-ink-00);
+}
+.cerk-avatar.emerald {
+  background: var(--cerk-emerald);
+  border-color: var(--cerk-emerald-deep);
+}
+
+/* ----------------- ПРОГРЕСС СБОРА ----------------- */
+
+.cerk-progress {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cerk-3);
+}
+.cerk-progress__head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--cerk-3);
+  flex-wrap: wrap;
+}
+.cerk-progress__raised {
+  font-family: var(--cerk-font-rubric);
+  font-size: var(--cerk-t-08);
+  line-height: 1;
+  color: var(--cerk-emerald-deep);
+}
+.cerk-progress__goal {
+  font-size: var(--cerk-t-03);
+  color: var(--cerk-text-helper);
+}
+.cerk-progress__track {
+  width: 100%;
+  height: 10px;
+  background: var(--cerk-paper-03);
+  border: 1px solid var(--cerk-border-strong);
+  overflow: hidden;
+}
+.cerk-progress__fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--cerk-gold), var(--cerk-emerald));
+  transition: width var(--cerk-dur-4) var(--cerk-ease);
+}
+.cerk-progress__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--cerk-3);
+  font-size: var(--cerk-t-02);
+  color: var(--cerk-text-mute);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ----------------- КАРТОЧКА ПРОГРАММЫ ----------------- */
+
+.cerk-program-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--cerk-paper-00);
+  border: 1px solid var(--cerk-border);
+  transition:
+    border-color var(--cerk-dur-2) var(--cerk-ease),
+    box-shadow var(--cerk-dur-3) var(--cerk-ease);
+}
+.cerk-program-card:hover {
+  border-color: var(--cerk-border-strong);
+  box-shadow: var(--cerk-elevation-2);
+}
+.cerk-program-card__media {
+  display: block;
+  overflow: hidden;
+}
+.cerk-program-card__body {
+  padding: var(--cerk-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--cerk-4);
+  flex: 1;
+}
+
+/* ----------------- HISTORY ARTICLE ----------------- */
+
+.history-article p {
+  margin-bottom: var(--cerk-5);
+}
+.history-article p:last-child {
+  margin-bottom: 0;
+}
+.history-h2 {
+  font-family: var(--cerk-font-rubric);
+  color: var(--cerk-rub);
+  font-size: var(--cerk-t-07);
+  line-height: 1.15;
+  margin: var(--cerk-9) 0 var(--cerk-5);
+}
+.history-h2:first-child {
+  margin-top: 0;
+}
+.history-h3 {
+  font-family: var(--cerk-font-rubric);
+  color: var(--cerk-rub);
+  font-size: var(--cerk-t-05);
+  line-height: 1.2;
+  margin: var(--cerk-7) 0 var(--cerk-4);
+}
+.history-quote {
+  margin: var(--cerk-5) 0;
+  padding: var(--cerk-4) var(--cerk-6);
+  border-left: 3px solid var(--cerk-gold);
+  background: var(--cerk-paper-01);
+  font-family: var(--cerk-font-body);
+  font-style: italic;
+  color: var(--cerk-text-mute);
+  font-size: var(--cerk-t-03);
+  line-height: 1.7;
+}
+.history-poem {
+  font-style: normal;
+  text-align: center;
+  font-family: var(--cerk-font-body);
+  color: var(--cerk-text);
+  line-height: 1.6;
+}
+.history-list {
+  margin: var(--cerk-4) 0 var(--cerk-5);
+  padding-left: var(--cerk-7);
+}
+.history-list li {
+  margin-bottom: var(--cerk-3);
+  line-height: 1.7;
+}
+.history-list-ordered {
+  list-style: decimal;
+}

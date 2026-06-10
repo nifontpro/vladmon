@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="80" viewBox="0 0 240 80" preserveAspectRatio="xMidYMid meet">
+  <!--
+    tile-h: горизонтальный «кирпич» рамки. Период 240×80.
+    Композиция: [бумага · узел · мост · розетка · мост · узел · бумага].
+    Узлы — целые, внутри тайла (x=30, x=210); по краям тайла — чистая бумага
+    шириной 8 единиц. При repeat-x между узлами соседних тайлов остаётся
+    ~16 ед бумажного воздуха — узор не задваивается у стыка. На стыке
+    tile↔corner у угла тоже спокойная бумага, без обрезков.
+  -->
+  <defs>
+    <g id="rosette-h">
+      <circle r="32" fill="#efe5ce"/>
+      <circle r="32" fill="none" stroke="#c8983e" stroke-width="2"/>
+      <circle r="29" fill="none" stroke="#8b6a2a" stroke-width="0.55" opacity="0.75"/>
+      <circle r="26" fill="#e1b6a4"/>
+
+      <g fill="#3a6c4f" stroke="#23402c" stroke-width="0.55" stroke-linejoin="round">
+        <path d="M0 -22 C 5.5 -12, 5.5 -6, 0 0 C -5.5 -6, -5.5 -12, 0 -22 Z"/>
+        <path d="M0 22  C 5.5 12,  5.5 6,  0 0 C -5.5 6,  -5.5 12,  0 22  Z"/>
+        <path d="M-22 0 C -12 -5.5, -6 -5.5, 0 0 C -6 5.5, -12 5.5, -22 0 Z"/>
+        <path d="M22 0  C 12 -5.5,  6 -5.5,  0 0 C 6 5.5,   12 5.5,  22 0  Z"/>
+      </g>
+      <g fill="#23402c" stroke="#0d1e14" stroke-width="0.4" opacity="0.9" transform="rotate(45)">
+        <path d="M0 -14 C 3 -8, 3 -4, 0 0 C -3 -4, -3 -8, 0 -14 Z"/>
+        <path d="M0 14  C 3 8,  3 4,  0 0 C -3 4,  -3 8,  0 14  Z"/>
+        <path d="M-14 0 C -8 -3, -4 -3, 0 0 C -4 3, -8 3, -14 0 Z"/>
+        <path d="M14 0  C 8 -3,  4 -3,  0 0 C 4 3,   8 3,  14 0  Z"/>
+      </g>
+
+      <g fill="#447a86" stroke="#1f4750" stroke-width="0.45">
+        <path d="M11 11 C 14 14, 14 17, 11 17 C 8 14, 8 14, 11 11 Z"/>
+        <path d="M-11 11 C -14 14, -14 17, -11 17 C -8 14, -8 14, -11 11 Z"/>
+        <path d="M-11 -11 C -14 -14, -14 -17, -11 -17 C -8 -14, -8 -14, -11 -11 Z"/>
+        <path d="M11 -11 C 14 -14, 14 -17, 11 -17 C 8 -14, 8 -14, 11 -11 Z"/>
+      </g>
+
+      <circle r="5.4" fill="#a82820" stroke="#6a1612" stroke-width="0.5"/>
+      <circle r="2" fill="#efe5ce"/>
+
+      <g fill="#efe5ce" stroke="#8b6a2a" stroke-width="0.4">
+        <circle cx="0" cy="-28.5" r="1.3"/>
+        <circle cx="0" cy="28.5"  r="1.3"/>
+        <circle cx="-28.5" cy="0" r="1.3"/>
+        <circle cx="28.5" cy="0"  r="1.3"/>
+      </g>
+    </g>
+
+    <g id="node-h">
+      <ellipse rx="22" ry="20" fill="#efe5ce"/>
+      <ellipse rx="22" ry="20" fill="none" stroke="#c8983e" stroke-width="1.6"/>
+      <ellipse rx="19.2" ry="17.4" fill="none" stroke="#8b6a2a" stroke-width="0.5" opacity="0.7"/>
+      <g fill="#3a6c4f" stroke="#23402c" stroke-width="0.5" stroke-linejoin="round">
+        <path d="M0 -14 C 4 -8, 4 -4, 0 0 C -4 -4, -4 -8, 0 -14 Z"/>
+        <path d="M0 14  C 4 8,  4 4,  0 0 C -4 4,  -4 8,  0 14  Z"/>
+        <path d="M-16 0 C -10 -4, -5 -4, 0 0 C -5 4, -10 4, -16 0 Z"/>
+        <path d="M16 0  C 10 -4,  5 -4,  0 0 C 5 4,   10 4,  16 0  Z"/>
+      </g>
+      <g fill="#447a86" stroke="#1f4750" stroke-width="0.35">
+        <circle cx="7" cy="7" r="1.8"/>
+        <circle cx="-7" cy="7" r="1.8"/>
+        <circle cx="-7" cy="-7" r="1.8"/>
+        <circle cx="7" cy="-7" r="1.8"/>
+      </g>
+      <circle r="3.5" fill="#a82820" stroke="#6a1612" stroke-width="0.4"/>
+      <circle r="1.4" fill="#efe5ce"/>
+    </g>
+
+    <g id="bridge-h">
+      <path d="M0 0 C 9 -8, 27 -8, 36 0" fill="none" stroke="#c8983e" stroke-width="1.4"/>
+      <path d="M0 0 C 9 8, 27 8, 36 0" fill="none" stroke="#c8983e" stroke-width="1.4"/>
+      <path d="M0 0 C 9 -6, 27 -6, 36 0" fill="none" stroke="#8b6a2a" stroke-width="0.4" opacity="0.65"/>
+      <path d="M0 0 C 9 6, 27 6, 36 0" fill="none" stroke="#8b6a2a" stroke-width="0.4" opacity="0.65"/>
+
+      <g transform="translate(18 0)">
+        <path d="M-5 0 C -3 -4, 3 -4, 5 0 C 3 4, -3 4, -5 0 Z" fill="#e1b6a4" stroke="#8b6a2a" stroke-width="0.4"/>
+        <circle r="1.3" fill="#a82820" stroke="#6a1612" stroke-width="0.3"/>
+      </g>
+
+      <g fill="#447a86" stroke="#1f4750" stroke-width="0.3">
+        <circle cx="7" cy="0" r="1.1"/>
+        <circle cx="29" cy="0" r="1.1"/>
+      </g>
+
+      <g fill="#c8983e">
+        <circle cx="18" cy="-7" r="0.8"/>
+        <circle cx="18" cy="7" r="0.8"/>
+      </g>
+    </g>
+  </defs>
+
+  <!-- Фон-пергамент -->
+  <rect width="240" height="80" fill="#efe5ce"/>
+
+  <!-- Золотая каёмка сверху и снизу — единая линия через все три SVG -->
+  <rect x="0" y="0"     width="240" height="6.25" fill="#c8983e"/>
+  <rect x="0" y="73.75" width="240" height="6.25" fill="#c8983e"/>
+  <line x1="0" y1="7.1"  x2="240" y2="7.1"  stroke="#8b6a2a" stroke-width="0.55"/>
+  <line x1="0" y1="72.9" x2="240" y2="72.9" stroke="#8b6a2a" stroke-width="0.55"/>
+
+  <!-- Мосты между узлом и розеткой (длина 36 ед) -->
+  <use href="#bridge-h" x="52"  y="40"/>
+  <use href="#bridge-h" x="152" y="40"/>
+
+  <!-- Центральная розетка -->
+  <use href="#rosette-h" x="120" y="40"/>
+
+  <!-- Узлы внутри тайла; 8 ед чистой бумаги по краям, ещё ~16 ед на стыке -->
+  <use href="#node-h" x="30"  y="40"/>
+  <use href="#node-h" x="210" y="40"/>
+</svg>

@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;0,7..72,700;1,7..72,400&family=Onest:wght@400;500;600;700&display=swap');
+
+@import 'tailwindcss';
+
+@import './fonts.css';
+@import './tokens.css';
+@import './base.css';
+@import './components.css';
+
+@theme {
+  --color-paper-00: #fbf3da;
+  --color-paper-01: #f1e3b6;
+  --color-paper-02: #e8d59a;
+  --color-paper-03: #ddc681;
+  --color-paper-04: #cdb069;
+  --color-paper-fold: #b89752;
+
+  --color-ink-00: #2a1810;
+  --color-ink-01: #4a2e1e;
+  --color-ink-02: #6e4d35;
+  --color-ink-03: #9a7a5c;
+  --color-ink-04: #c2a784;
+
+  --color-rubric-light: #c44a3a;
+  --color-rubric: #a82820;
+  --color-rubric-deep: #7a1810;
+
+  --color-lapis-10: #d9d7ec;
+  --color-lapis-20: #a8a3d2;
+  --color-lapis-40: #5a4f9e;
+  --color-lapis-60: #3a2c7a;
+  --color-lapis-70: #2a1e60;
+  --color-lapis-80: #1a124a;
+
+  --color-gold-light: #e0bc62;
+  --color-gold: #b8893a;
+  --color-gold-deep: #8a6420;
+
+  --color-emerald: #3a6242;
+  --color-emerald-deep: #244029;
+
+  --font-display: 'Monomakh', 'Fedorovsk', serif;
+  --font-rubric: 'Fedorovsk', 'Vertograd', serif;
+  --font-initial: 'Vertograd', 'Indiction', serif;
+  --font-body: 'Literata', Georgia, serif;
+  --font-ui: 'Onest', system-ui, sans-serif;
+
+  --ease-cerk: cubic-bezier(0.2, 0, 0, 1);
+  --ease-cerk-out: cubic-bezier(0, 0, 0.2, 1);
+
+  --radius-cerk: 0;
+}

@@ -54,11 +54,14 @@ git push origin main
 Залей медиафайлы напрямую. **Без `--delete`** — чтобы случайно не снести то, что есть на сервере (новые файлы добавятся, изменённые обновятся):
 
 ```bash
-rsync -avz --info=progress2 \
+rsync -avz --stats \
   -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" \
   public/photos/ \
   nifont@vladmon.ru:/var/www/vladmon.ru/photos/
 ```
+
+> Примечание: на macOS системный rsync старый (BSD 2.6.9) и не понимает `--info=progress2` —
+> используем `--stats`. Если поставлен свежий rsync (через brew) — можно вернуть `--info=progress2`.
 
 Покажи итог rsync (сколько файлов передано, объём).
 

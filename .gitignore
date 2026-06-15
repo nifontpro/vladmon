@@ -24,3 +24,7 @@ dist-ssr
 *.sw?
 /raw/
 /wiki/
+
+# Медиафайлы сайта — НЕ в git (тяжёлые). Деплоятся отдельно через `/deploy` (rsync на VPS).
+# fonts/, ornaments/, favicon.svg остаются в git — они нужны сборке.
+/public/photos/

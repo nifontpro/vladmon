@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 import { NAV_ITEMS, ROUTES } from '@/shared/config/routes';
 import { MONASTERY } from '@/shared/config/meta';
 import { Icon } from '@/shared/icons/sprite';
-import { Button } from '@/shared/ui';
+import { Button, LinkButton } from '@/shared/ui';
 import { cn } from '@/shared/lib/cn';
 
 export function SiteHeader() {
@@ -70,9 +70,10 @@ export function SiteHeader() {
             className="hidden lg:flex"
             style={{
               listStyle: 'none',
-              gap: 'var(--cerk-7)',
+              gap: 'var(--cerk-5)',
               margin: 0,
               padding: 0,
+              flexWrap: 'nowrap',
             }}
           >
             {NAV_ITEMS.map((item) => (
@@ -90,6 +91,7 @@ export function SiteHeader() {
                     position: 'relative',
                     padding: 'var(--cerk-3) 0',
                     display: 'inline-block',
+                    whiteSpace: 'nowrap',
                   }}
                 >
                   {({ isActive }) => (
@@ -119,15 +121,15 @@ export function SiteHeader() {
           </ul>
 
           <div style={{ display: 'flex', gap: 'var(--cerk-3)', alignItems: 'center' }}>
-            <Button
-              variant="ghost"
+            <LinkButton
+              to={ROUTES.donate}
+              variant="rubric"
               size="sm"
-              aria-label="Открыть меню"
-              className="lg:hidden"
-              onClick={() => setMenuOpen((v) => !v)}
+              className="hidden md:inline-flex"
             >
-              <Icon name="i-menu" size={18} />
-            </Button>
+              <Icon name="i-candle" size={16} />
+              Пожертвовать
+            </LinkButton>
             <Button
               variant="ghost"
               size="sm"
@@ -138,6 +140,15 @@ export function SiteHeader() {
               className="hidden md:inline-flex"
             >
               <Icon name="i-search" size={16} />
+            </Button>
+            <Button
+              variant="ghost"
+              size="sm"
+              aria-label="Открыть меню"
+              className="lg:hidden"
+              onClick={() => setMenuOpen((v) => !v)}
+            >
+              <Icon name="i-menu" size={18} />
             </Button>
           </div>
         </nav>
@@ -178,6 +189,17 @@ export function SiteHeader() {
                 </NavLink>
               </li>
             ))}
+            <li style={{ marginTop: 'var(--cerk-3)', paddingLeft: 'var(--cerk-4)' }}>
+              <LinkButton
+                to={ROUTES.donate}
+                variant="rubric"
+                size="md"
+                onClick={() => setMenuOpen(false)}
+              >
+                <Icon name="i-candle" size={16} />
+                Пожертвовать
+              </LinkButton>
+            </li>
           </motion.ul>
         )}
       </div>

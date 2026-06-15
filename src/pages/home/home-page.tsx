@@ -89,6 +89,10 @@ export function HomePage() {
                   Узнать историю
                   <Icon name="i-arrow-r" size={16} className="icon" />
                 </LinkButton>
+                <LinkButton to={ROUTES.donate} variant="rubric" size="lg">
+                  <Icon name="i-candle" size={16} />
+                  Поддержать обитель
+                </LinkButton>
                 <LinkButton to={ROUTES.schedule} variant="secondary" size="lg">
                   Расписание служб
                 </LinkButton>
@@ -279,6 +283,61 @@ export function HomePage() {
                 </Link>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="page">
+          <div
+            style={{
+              background: 'var(--cerk-paper-00)',
+              border: '1px solid var(--cerk-border)',
+              padding: 'var(--cerk-9)',
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: 'var(--cerk-7)',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+            }}
+          >
+            <div style={{ flex: '1 1 340px' }}>
+              <div className="eyebrow-row">
+                <span
+                  style={{
+                    fontFamily: 'var(--cerk-font-rubric)',
+                    fontSize: 'var(--cerk-t-06)',
+                    color: 'var(--cerk-rub)',
+                  }}
+                >
+                  II.
+                </span>
+                <span className="h-eyebrow">Помощь обители</span>
+              </div>
+              <h2 className="h-section" style={{ marginBottom: 'var(--cerk-4)' }}>
+                Ваше пожертвование хранит обитель
+              </h2>
+              <p style={{ margin: 0, color: 'var(--cerk-text-mute)', maxWidth: '52ch' }}>
+                Содержание храмов, восстановление построек и дела милосердия совершаются на
+                добровольные пожертвования. Поддержать монастырь можно онлайн или переводом по
+                реквизитам.
+              </p>
+            </div>
+            <div
+              style={{
+                display: 'flex',
+                gap: 'var(--cerk-4)',
+                flexWrap: 'wrap',
+              }}
+            >
+              <LinkButton to={ROUTES.donate} variant="rubric" size="lg">
+                <Icon name="i-candle" size={18} />
+                Пожертвовать
+              </LinkButton>
+              <LinkButton to={ROUTES.programs} variant="secondary" size="lg">
+                Целевые программы
+              </LinkButton>
+            </div>
           </div>
         </div>
       </section>

@@ -7,10 +7,15 @@ export const ROUTES = {
   historyRevival: '/history/revival',
   historyIcon: '/history/icon',
   today: '/today',
+  chronicle: '/chronicle',
   schedule: '/schedule',
   notes: '/notes',
   programs: '/programs',
+  donate: '/donate',
   contacts: '/contacts',
+  archive: '/archive',
+  offer: '/offer',
+  privacy: '/privacy',
 } as const;
 
 export type RouteKey = keyof typeof ROUTES;
@@ -19,6 +24,7 @@ export const NAV_ITEMS: Array<{ key: RouteKey; label: string; to: string }> = [
   { key: 'home', label: 'Главная', to: ROUTES.home },
   { key: 'history', label: 'История', to: ROUTES.history },
   { key: 'today', label: 'Современность', to: ROUTES.today },
+  { key: 'chronicle', label: 'Летопись', to: ROUTES.chronicle },
   { key: 'schedule', label: 'Расписание', to: ROUTES.schedule },
   { key: 'notes', label: 'Записки', to: ROUTES.notes },
   { key: 'programs', label: 'Помощь обители', to: ROUTES.programs },

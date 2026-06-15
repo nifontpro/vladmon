@@ -264,4 +264,7 @@ hr {
     grid-template-columns: 1fr;
     gap: var(--cerk-4);
   }
+  .donate-grid {
+    grid-template-columns: 1fr;
+  }
 }

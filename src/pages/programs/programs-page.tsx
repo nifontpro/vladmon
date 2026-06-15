@@ -1,7 +1,9 @@
 import { motion } from 'motion/react';
 import { PROGRAMS } from '@/entities/program/mock';
 import { ProgramCard } from '@/widgets/program-card/program-card';
-import { DonationPanel } from '@/widgets/donation-panel/donation-panel';
+import { LinkButton } from '@/shared/ui';
+import { ROUTES } from '@/shared/config/routes';
+import { Icon } from '@/shared/icons/sprite';
 
 export function ProgramsPage() {
   return (
@@ -49,8 +51,30 @@ export function ProgramsPage() {
           ))}
         </div>
 
-        <div style={{ maxWidth: 560 }}>
-          <DonationPanel />
+        <div
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            alignItems: 'center',
+            gap: 'var(--cerk-5)',
+            background: 'var(--cerk-paper-00)',
+            border: '1px solid var(--cerk-border)',
+            padding: 'var(--cerk-7)',
+          }}
+        >
+          <div style={{ flex: '1 1 260px' }}>
+            <div className="h-eyebrow" style={{ display: 'block', marginBottom: 'var(--cerk-3)' }}>
+              Свободное пожертвование
+            </div>
+            <p style={{ margin: 0, color: 'var(--cerk-text-mute)' }}>
+              Можно поддержать обитель без привязки к конкретной программе — на её повседневные нужды
+              и богослужебную жизнь.
+            </p>
+          </div>
+          <LinkButton to={ROUTES.donate} variant="rubric" size="lg">
+            <Icon name="i-candle" size={18} />
+            Пожертвовать
+          </LinkButton>
         </div>
       </div>
     </section>

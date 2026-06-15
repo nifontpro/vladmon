@@ -64,6 +64,20 @@ export const router = createBrowserRouter([
         },
       },
       {
+        path: ROUTES.chronicle.slice(1),
+        lazy: async () => {
+          const m = await import('@/pages/chronicle/chronicle-page');
+          return { Component: m.ChroniclePage };
+        },
+      },
+      {
+        path: `${ROUTES.chronicle.slice(1)}/:slug`,
+        lazy: async () => {
+          const m = await import('@/pages/chronicle/event-page');
+          return { Component: m.EventPage };
+        },
+      },
+      {
         path: ROUTES.schedule.slice(1),
         lazy: async () => {
           const m = await import('@/pages/schedule/schedule-page');
@@ -92,10 +106,45 @@ export const router = createBrowserRouter([
         },
       },
       {
+        path: ROUTES.donate.slice(1),
+        lazy: async () => {
+          const m = await import('@/pages/donate/donate-page');
+          return { Component: m.DonatePage };
+        },
+      },
+      {
         path: ROUTES.contacts.slice(1),
         lazy: async () => {
           const m = await import('@/pages/contacts/contacts-page');
           return { Component: m.ContactsPage };
+        },
+      },
+      {
+        path: ROUTES.archive.slice(1),
+        lazy: async () => {
+          const m = await import('@/pages/archive/archive-page');
+          return { Component: m.ArchivePage };
+        },
+      },
+      {
+        path: `${ROUTES.archive.slice(1)}/:slug`,
+        lazy: async () => {
+          const m = await import('@/pages/archive/archive-entry-page');
+          return { Component: m.ArchiveEntryPage };
+        },
+      },
+      {
+        path: ROUTES.offer.slice(1),
+        lazy: async () => {
+          const m = await import('@/pages/offer/offer-page');
+          return { Component: m.OfferPage };
+        },
+      },
+      {
+        path: ROUTES.privacy.slice(1),
+        lazy: async () => {
+          const m = await import('@/pages/privacy/privacy-page');
+          return { Component: m.PrivacyPage };
         },
       },
       {

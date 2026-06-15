@@ -36,9 +36,11 @@ jobs:
           ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no \
             ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} 'echo SSH_OK'
 
+      # Медиафайлы (/photos) не в git и деплоятся отдельно командой /deploy (rsync с локальной машины).
+      # Исключаем их из CI-rsync, иначе --delete снёс бы залитые на сервере медиа.
       - name: Deploy via rsync
         run: |
-          rsync -avz --delete \
+          rsync -avz --delete --exclude='/photos/' \
             -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no" \
             dist/ \
             ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/var/www/vladmon.ru/

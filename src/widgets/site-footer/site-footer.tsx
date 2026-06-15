@@ -1,4 +1,6 @@
+import { Link } from 'react-router';
 import { MONASTERY } from '@/shared/config/meta';
+import { ROUTES } from '@/shared/config/routes';
 import { Icon } from '@/shared/icons/sprite';
 
 export function SiteFooter() {
@@ -88,10 +90,26 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div
+        <nav
           style={{
             borderTop: '1px solid var(--cerk-border)',
             paddingTop: 'var(--cerk-5)',
+            paddingBottom: 'var(--cerk-4)',
+            display: 'flex',
+            gap: 'var(--cerk-6)',
+            flexWrap: 'wrap',
+            fontSize: 'var(--cerk-t-02)',
+          }}
+        >
+          <Link to={ROUTES.donate}>Пожертвовать</Link>
+          <Link to={ROUTES.archive}>Архив документов</Link>
+          <Link to={ROUTES.offer}>Публичная оферта</Link>
+          <Link to={ROUTES.privacy}>Политика обработки персональных данных</Link>
+          <Link to={ROUTES.contacts}>Контакты и реквизиты</Link>
+        </nav>
+
+        <div
+          style={{
             display: 'flex',
             justifyContent: 'space-between',
             gap: 'var(--cerk-4)',

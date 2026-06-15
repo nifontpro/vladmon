@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { Link } from 'react-router';
 import { MONASTERY_TIMELINE, MONASTERY } from '@/shared/config/meta';
-import { HISTORY_SECTIONS } from '@/shared/config/routes';
+import { HISTORY_SECTIONS, ROUTES } from '@/shared/config/routes';
 import { Timeline } from '@/widgets/timeline/timeline';
 import { OrnamentBand } from '@/widgets/ornament-band/ornament-band';
 import { Dropcap, Banner } from '@/shared/ui';
@@ -215,6 +215,50 @@ export function HistoryPage() {
             <span className="h-eyebrow">Хронология</span>
           </div>
           <Timeline events={MONASTERY_TIMELINE} />
+
+          <Link
+            to={ROUTES.archive}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: 'var(--cerk-5)',
+              flexWrap: 'wrap',
+              marginTop: 'var(--cerk-10)',
+              padding: 'var(--cerk-7)',
+              background: 'var(--cerk-paper-00)',
+              border: '1px solid var(--cerk-border)',
+              textDecoration: 'none',
+              color: 'inherit',
+            }}
+          >
+            <div>
+              <div
+                className="h-eyebrow"
+                style={{ display: 'block', marginBottom: 'var(--cerk-2)' }}
+              >
+                Архив обители
+              </div>
+              <div style={{ color: 'var(--cerk-text-mute)' }}>
+                Подлинные документы — Ведомость 1910 года, карты владений — со сканами и
+                расшифровками.
+              </div>
+            </div>
+            <span
+              style={{
+                color: 'var(--cerk-accent)',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 6,
+                fontFamily: 'var(--cerk-font-ui)',
+                fontWeight: 500,
+                whiteSpace: 'nowrap',
+              }}
+            >
+              Открыть архив
+              <Icon name="i-arrow-r" size={16} />
+            </span>
+          </Link>
         </div>
       </section>
     </>
